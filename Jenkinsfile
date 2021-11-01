@@ -8,13 +8,13 @@ pipeline{
             }
             stage('Build Image'){
                 steps{
-                    sh 'sudo docker build -t mymodel:v1'
+                    sh 'docker build -t mymodel:v1'
                 }
 
             }
             stage('Run Image'){
                 steps{
-                    sh 'sudo docker run -d --name flowermodel mymodel:v1'
+                    sh 'docker run -d --name flowermodel mymodel:v1'
                 }
             }
             stage('Test'){
