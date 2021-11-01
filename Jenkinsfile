@@ -8,7 +8,7 @@ pipeline{
             }
             stage('Build Image'){
                 steps{
-                    sh 'docker build -t mymodel:v1'
+                    sh 'docker build -t mymodel:v1 .'
                 }
 
             }
