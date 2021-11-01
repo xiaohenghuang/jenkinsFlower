@@ -12,6 +12,6 @@ RUN pip3 install -r requirements.txt
 
 COPY . .
 
-RUN streamlit run app.py
+# RUN streamlit run app.py
 # EXPOSE 4000
-# CMD [ "streamlit", "run", "app.py" ]
+CMD [ "streamlit", "run", "app.py" ]
