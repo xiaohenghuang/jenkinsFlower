@@ -1,5 +1,5 @@
 pipeline{
-    agent any
+    agent { dockerfile true }/*any*/
         stages{
             stage('Clone Repository'){
                 steps{
