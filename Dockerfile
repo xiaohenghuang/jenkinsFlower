@@ -1,5 +1,6 @@
-FROM frolvlad/alpine-python-machinelearning
-# python:3.6.15-slim-buster
+FROM python:3.6.15-slim-buster
+# frolvlad/alpine-python-machinelearning
+# 
 
 RUN pip install --upgrade pip
 
@@ -12,5 +13,5 @@ RUN pip3 install -r requirements.txt
 COPY . .
 
 RUN streamlit run app.py
-EXPOSE 4000
+# EXPOSE 4000
 # CMD [ "streamlit", "run", "app.py" ]
