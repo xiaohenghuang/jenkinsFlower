@@ -14,7 +14,7 @@ pipeline{
             }
             stage('Run Image'){
                 steps{
-                    sh 'docker run -d --name flowermodel mymodel:v1'
+                    sh 'docker run -d -p 8501:8501 --name flowermodel mymodel:v1'
                 }
             }
             stage('Test'){
