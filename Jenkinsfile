@@ -1,5 +1,5 @@
 pipeline{
-    agent { dockerfile true }/*any*/
+    agent { label "linux" }/*any*/
         stages{
             stage('Clone Repository'){
                 steps{
@@ -8,18 +8,23 @@ pipeline{
             }
             stage('Build Image'){
                 steps{
-                    sh 'docker build -t mymodel:v1'
+                    sh """
+                    docker build -t mymodel:v1
+                """
                 }
 
             }
             stage('Run Image'){
                 steps{
-                    sh 'docker run -d --name flowermodel mymodel:v1'
+                    sh """
+                    docker run -d --name flowermodel mymodel:v1
+                """
                 }
             }
             stage('Test'){
                 steps{
-                    echo 'testing...'
+                    echo """testing...
+                """
                 }
             }
         }
